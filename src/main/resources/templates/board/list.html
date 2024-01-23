@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<th:block th:replace="~{/layout/basic :: setContent(~{this::content})}">
+
+    <th:block th:fragment="content"></th:block>
+    
+    
+    <h1>BookList page
+    	<span>
+    		<a th:herf="@{/board/register}">
+				<button type = "button" class="btn btn-outlin-primary">상품등록
+				</button>    		
+    		</a>
+    	</span>
+    </h1>
+    
+    <table class = "table table-striped">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>제목</th>
+				<th>작가</th>
+				<th>가격</th>
+				<th>상품등록일</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each = "dto : ${list}">
+			<th>
+				<a th:herf = "@{board/read(no = ${dto.no})}">[[{dto.no}]] </a>
+			</th>
+			<td>[[${dto.title}]</td>
+			<td>[[${dto.writer}]]</td>
+			<td>[[${dto.price}]]</td>
+			<td>[[${#temporals.format( dto.regDate , 'yyyy-MM-dd') }]]</td>
+			</tr>
+		</tbody>  
+  
+	</table>
+	
+		<script th:inline = "javascript">
+		
+			$(document).ready(
+							function(){
+								
+								var msg = [[${msg}]];
+								
+								if(msg !=null){
+									
+									alert(msg + "새 상품이 등록되었습니다!")
+								}
+							}		
+						);
+
+		
+		</script>
+
+    
+    
+    
+    
+    </th:block>
+
+</th:block>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<th:block th:replace="~{/layout/basic :: setContent(~{this::content} )}">
+
+    <th:block th:fragment="content">
+    
+    <h1 class="mt-4">Board Register Page</h1>
+    
+    <from th:action="@{/board/register}" th:method="post"></from>
+
+			
+			<div class="form-group">
+				<label>제목</label> 
+				<input type="text" class="form-control" name="title">
+			</div>
+			
+			<div class="form-group">
+                <label >상품설명</label>
+                <textarea class="form-control" rows="5" name="content"></textarea>
+            </div>
+            
+			 <div class="form-group">
+                <label >작가</label>
+                <input type="text" class="form-control" name="writer">
+            </div>
+            
+			<div class="form-group">
+				<label>가격</label> 
+				<input type="number" class="form-control" name="price">
+			</div>
+			
+			<button type="submit" class="btn btn=primary">상품등록</button>
+    
+    </th:block>
+
+</th:block>

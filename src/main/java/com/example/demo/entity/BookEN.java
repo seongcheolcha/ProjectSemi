@@ -14,15 +14,15 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name = "tbl_board")
+@Table(name = "tbl_book")
 @Getter
 @Setter
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+public class BookEN {
 
-public class Board extends BaseEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,5 +39,4 @@ public class Board extends BaseEntity {
 	
 	@Column(length = 100, nullable = false)
 	int price;
-
 }

@@ -36,11 +36,11 @@
 					th:value="${#temporals.format(dto.regDate, 'yyyy-MM-dd HH-mm-ss')}">
 			</div>
 			
-			<a th:href="@{/board/modify(no= ${dto.no})}">
+			<a th:href="@{/board1/modify1(no= ${dto.no})}">
 				<button type="button" class = "btn btn-primary">상품수정</button>
 			</a>
 			
-			<a th:href="@{/board/list}">
+			<a th:href="@{/board1/list1}">
 				<button type="button" class = "btn btn-info">목록으로</button>
 			</a>
 	</th:block>

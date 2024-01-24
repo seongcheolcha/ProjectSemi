@@ -15,9 +15,8 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+public class BookDTO {
 
-public class BoardDTO {
-	
 	int no;
 	
 	String title;
@@ -31,6 +30,4 @@ public class BoardDTO {
 	LocalDateTime regDate;
 	
 	LocalDateTime modDate;
-	
-
 }

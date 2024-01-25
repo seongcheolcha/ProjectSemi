@@ -21,7 +21,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class BookEN {
+public class BookEN extends timeentity{
 
 	
 	@Id
@@ -38,5 +38,5 @@ public class BookEN {
 	String writer;
 	
 	@Column(length = 100, nullable = false)
-	int price;
+	String price;
 }

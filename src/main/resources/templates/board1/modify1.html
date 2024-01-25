@@ -1,84 +1,12 @@
 <!DOCTYPE html>
 
-<th:block th:replace="~{/layout/basic :: setContent(~{this::content} )}">
+<html>
+
+<th:block th:replace="~{/layout/detailTest :: setContent(~{this::content})}">
 
     <th:block th:fragment="content">
     
-    	<h1 class="mt-4">Board Modify Page</h1>
-    
-    		<form>
-    			<div class="form-group">
-    				<label>등록번호</label>
-    				<input type="text" class="form-control" name="no" th:value = "${dto.no}" readonly>
-    			</div>
-    			<div class="form-group">
-    				<label>제목</label>
-    				<input type="text" class="form-control" name="title" th:value = "${dto.title}">
-    			</div>
-    			<div class="form-group">
-    				<label>상품설명</label>
-    				<textarea class="form-control" rows="5" name="content">[[${dto.content}]]</textarea>
-    			</div>
-    			<div class="form-group">
-    				<label>작가</label>
-    				<input type="text" class="form-control" name="writer" th:value = "${dto.writer}">
-    			</div>
-    			<div class="form-group">
-    				<label>가격</label>
-    				<input type="number" class="form-control" name="price" th:value = "${dto.price}">
-    			</div>
-    			<div class="form-group">
-    				<label>등록일</label>
-    				<input type="text" class="form-control" name="regDate" th:value = "${#temporals.format(dto.regDate, 'yyyy-MM-dd HH-mm-ss')}">
-    			</div>
-    			<div class="form-group">
-    				<label>수정일</label>
-    				<input type="text" class="form-control" name="regDate" th:value = "${#temporals.format(dto.regDate, 'yyyy-MM-dd HH-mm-ss')}">
-    			</div>
-    		</form>
-    
-    			<button type="button" class = "btn btn-primary modifyBtn">상품수정</button>
-    			
-    			<button type="button" class = "btn btn-info listbtn">목록으로</button>
-    			
-    			<button type="button" class = "btn btn-danger removeBtn">상품삭제</button>
-    			
-    			<script th:inline = "javascript">
-    				
-    				var form = $("form");
-    				
-    				$(".modifyBtn").click(function(){
-    					if(confirm("상품을 수정하시겠습니까?")){
-    						return;
-    					}
-    					
-    					
-    					form.attr("action", "/board/modify")
-    						.attr("method", "post")
-    						.submit();
-    				});
-    				
-    				$(".listenBtn").click(function(){
-    					
-    					form.attr("action", "/board.list")
-    						.attr("method", "get")
-    						.submit();
-    					
-    				});
-    				
-    				
-    				
-    				
-    				$(".removeBtn").click(function(){
-    					form.attr("action", "/board/remove")
-    						.attr("method", "post")
-    						.submit();
-    					
-    				});
-
-    			
-				</script>
-    
+    	<h1>Modify Page</h1>
     
      </th:block>
 

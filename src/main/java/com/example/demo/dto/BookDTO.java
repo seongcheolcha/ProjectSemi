@@ -7,27 +7,23 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
+import lombok.ToString; 
 
 @Getter
 @Setter
-@ToString
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 @Builder
+
 public class BookDTO {
 
-	int no;
+	private int no;
+	private String title;
+	private String content;
+	private String writer;
+	private String price;
+	private LocalDateTime regDate;
+	private LocalDateTime modDate;
 	
-	String title;
-	
-	String content;
-	
-	String writer;
-	
-	int price;
-	
-	LocalDateTime regDate;
-	
-	LocalDateTime modDate;
 }
